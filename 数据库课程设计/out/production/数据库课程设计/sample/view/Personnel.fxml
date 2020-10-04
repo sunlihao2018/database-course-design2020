@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.PersonnelController">
+   <top>
+      <AnchorPane prefHeight="38.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="-1.0" prefHeight="32.0" prefWidth="198.0" spacing="10.0" AnchorPane.bottomAnchor="2.0" AnchorPane.topAnchor="3.0">
+               <children>
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#handleAdd" prefHeight="15.0" prefWidth="55.0" text="添加">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="edit" mnemonicParsing="false" onAction="#handleEdit" prefHeight="23.0" prefWidth="57.0" text="修改" />
+                  <Button fx:id="delete" mnemonicParsing="false" onAction="#handleDelete" prefHeight="23.0" prefWidth="57.0" text="删除" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox layoutX="416.0" layoutY="7.0" spacing="10.0" />
+            <Button fx:id="find" layoutX="712.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleFind" text="查找" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="7.0" />
+            <TextField fx:id="str" layoutX="539.0" layoutY="5.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="7.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.6521060842433697" orientation="VERTICAL" prefHeight="328.0" prefWidth="604.0" BorderPane.alignment="CENTER">
+        <items>
+            <AnchorPane prefHeight="136.0" prefWidth="639.0">
+               <children>
+                  <TableView fx:id="personTableUp" prefHeight="154.0" prefWidth="639.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="noColumnUp" prefWidth="150.0" text="编号" />
+                        <TableColumn fx:id="nameColumnUp" prefWidth="165.0" text="姓名" />
+                        <TableColumn fx:id="genderColumnUp" prefWidth="166.0" text="性别" />
+                        <TableColumn fx:id="phoneColumnUp" prefWidth="171.0" text="电话" />
+                        <TableColumn fx:id="positionColumnUp" prefWidth="168.0" text="职位" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="personTableDown" prefHeight="260.0" prefWidth="639.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="noColumnDown" prefWidth="118.0" text="编号" />
+                        <TableColumn fx:id="nameColumnDown" prefWidth="180.0" text="姓名" />
+                        <TableColumn fx:id="genderColumnDown" prefWidth="144.0" text="性别" />
+                        <TableColumn fx:id="phoneColumnDown" prefWidth="217.0" text="电话" />
+                        <TableColumn fx:id="positionColumnDown" prefWidth="160.0" text="职位" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.BuyController">
+   <top>
+      <AnchorPane prefHeight="43.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="45.0" prefWidth="212.0" spacing="30.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleAdd" prefHeight="30.0" prefWidth="89.0" text="添加">
+                     <HBox.margin>
+                        <Insets left="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleDelete" prefHeight="30.0" prefWidth="90.0" text="删除">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button layoutX="742.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleFind" text="查找" />
+            <TextField fx:id="str" layoutX="532.0" layoutY="8.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.6982343499197432" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="329.0" prefWidth="823.0">
+               <children>
+                  <TableView fx:id="buyTableUp" layoutX="261.0" layoutY="39.0" prefHeight="233.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="noColumnUp" prefWidth="83.0" text="采购编号" />
+                      <TableColumn fx:id="factoryColumnUp" prefWidth="67.0" text="厂家" />
+                        <TableColumn fx:id="rawColumnUp" prefWidth="108.0" text="原材料名称" />
+                        <TableColumn fx:id="sizeColumnUp" prefWidth="72.0" text="规格" />
+                        <TableColumn fx:id="amountColumnUp" prefWidth="69.0" text="数量" />
+                        <TableColumn fx:id="unitColumnUp" prefWidth="87.0" text="单位" />
+                        <TableColumn fx:id="priceColumnUp" prefWidth="92.0" text="单价" />
+                        <TableColumn fx:id="allpriceColumnUp" prefWidth="97.0" text="总价" />
+                        <TableColumn fx:id="timepriceColumnUp" prefWidth="143.0" text="时间" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="buyTableDown" layoutX="271.0" layoutY="49.0" prefHeight="184.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="noColumnDown" prefWidth="83.0" text="采购编号" />
+                        <TableColumn fx:id="factoryColumnDown" prefWidth="67.0" text="厂家" />
+                        <TableColumn fx:id="rawColumnDown" prefWidth="108.0" text="原材料名称" />
+                        <TableColumn fx:id="sizeColumnDown" prefWidth="72.0" text="规格" />
+                        <TableColumn fx:id="amountColumnDown" prefWidth="69.0" text="数量" />
+                        <TableColumn fx:id="unitColumnDown" prefWidth="87.0" text="单位" />
+                        <TableColumn fx:id="priceColumnDown" prefWidth="92.0" text="单价" />
+                        <TableColumn fx:id="allpriceColumnDown" prefWidth="97.0" text="总价" />
+                        <TableColumn fx:id="timepriceColumnDown" prefWidth="143.0" text="时间" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.LoginController">
+   <children>
+      <Text layoutX="26.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="生物科技公司进出货物管理系统" textAlignment="CENTER" wrappingWidth="351.240234375">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="账号：">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="accountText" layoutX="147.0" layoutY="137.0" prefHeight="33.0" prefWidth="161.0" />
+      <Text layoutX="72.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="密码：">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="passwordText" layoutX="147.0" layoutY="210.0" prefHeight="32.0" prefWidth="161.0" />
+      <Button layoutX="132.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="55.0" prefWidth="140.0" text="登录">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

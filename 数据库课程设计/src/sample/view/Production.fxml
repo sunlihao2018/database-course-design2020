@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.ProductionController">
+   <top>
+      <AnchorPane prefHeight="49.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="222.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleIn" prefHeight="23.0" prefWidth="78.0" text="入库">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleOut" prefHeight="23.0" prefWidth="80.0" text="出库">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.49912739965095987" orientation="VERTICAL" prefHeight="592.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="pro" layoutX="167.0" layoutY="94.0" prefHeight="308.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="prono" prefWidth="188.0" text="产品编号" />
+                      <TableColumn fx:id="proname" prefWidth="259.0" text="产品名称" />
+                        <TableColumn fx:id="proamount" prefWidth="198.0" text="库存" />
+                        <TableColumn fx:id="prounit" prefWidth="169.0" text="单位" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="log" layoutX="96.0" layoutY="20.0" prefHeight="310.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="logno" prefWidth="103.0" text="产品日志编号" />
+                      <TableColumn fx:id="logname" text="产品名称" />
+                        <TableColumn fx:id="logwhere" prefWidth="103.0" text="来源或出库" />
+                        <TableColumn fx:id="logamount" prefWidth="114.0" text="数量" />
+                        <TableColumn fx:id="logunit" prefWidth="122.0" text="单位" />
+                        <TableColumn fx:id="logtime" prefWidth="174.0" text="时间" />
+                        <TableColumn fx:id="logexplain" prefWidth="121.0" text="说明" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

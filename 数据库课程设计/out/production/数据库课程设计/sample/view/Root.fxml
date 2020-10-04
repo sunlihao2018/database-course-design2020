@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.RootController">
+   <left>
+      <VBox prefHeight="675.0" prefWidth="175.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="buy" mnemonicParsing="false" onAction="#handleBuy" prefHeight="113.0" prefWidth="100.0" text="采购管理" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="personnel" mnemonicParsing="false" onAction="#handlePersonnel" prefHeight="113.0" prefWidth="100.0" text="人事管理" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="raw" mnemonicParsing="false" onAction="#handleRaw" prefHeight="113.0" prefWidth="100.0" text="原材料管理" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="export" mnemonicParsing="false" onAction="#handleProduction" prefHeight="114.0" prefWidth="100.0" text="成品管理" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="production" mnemonicParsing="false" onAction="#handleWork" prefHeight="114.0" prefWidth="100.0" text="生产管理" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="order" mnemonicParsing="false" onAction="#handleOrder" prefHeight="114.0" prefWidth="100.0" text="订单管理" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane prefHeight="75.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="user" layoutX="924.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用户" textAlignment="CENTER" wrappingWidth="96.240234375" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="14.759765625" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="418.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="公司综合管理系统" textAlignment="CENTER" wrappingWidth="199.240234375" AnchorPane.bottomAnchor="20.89453125" AnchorPane.topAnchor="19.625">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

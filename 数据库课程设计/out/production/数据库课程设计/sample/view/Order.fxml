@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="51.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutY="9.0" prefHeight="35.0" prefWidth="348.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="添加新订单">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" text="添加订单细节">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="发货">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5189456342668863" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.6443361753958587" layoutX="193.0" layoutY="50.0" prefHeight="300.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView layoutX="27.0" layoutY="26.0" prefHeight="317.0" prefWidth="435.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="订单编号" />
+                                  <TableColumn prefWidth="75.0" text="联系人" />
+                                    <TableColumn prefWidth="75.0" text="客户单位" />
+                                    <TableColumn prefWidth="75.0" text="联系电话" />
+                                    <TableColumn prefWidth="75.0" text="地址" />
+                                    <TableColumn prefWidth="75.0" text="接单时间" />
+                                    <TableColumn prefWidth="75.0" text="是否完成" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="548.0">
+                           <children>
+                              <TableView layoutX="97.0" layoutY="47.0" prefHeight="317.0" prefWidth="378.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="104.0" text="订单细节编号" />
+                                  <TableColumn prefWidth="71.0" text="订单编号" />
+                                    <TableColumn prefWidth="64.0" text="产品" />
+                                    <TableColumn prefWidth="48.0" text="数量" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.5152253349573691" layoutX="148.0" layoutY="39.0" prefHeight="299.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="297.0" prefWidth="247.0">
+                           <children>
+                              <TableView layoutX="56.0" layoutY="31.0" prefHeight="293.0" prefWidth="436.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="133.0" text="订单细节编号" />
+                                  <TableColumn prefWidth="119.0" text="产品编号" />
+                                    <TableColumn prefWidth="145.0" text="还需发货的数量" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView layoutX="129.0" layoutY="29.0" prefHeight="293.0" prefWidth="377.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="99.0" text="订单细节编号" />
+                                  <TableColumn prefWidth="87.0" text="产品编号" />
+                                    <TableColumn prefWidth="85.0" text="数量" />
+                                    <TableColumn prefWidth="101.0" text="发货时间" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

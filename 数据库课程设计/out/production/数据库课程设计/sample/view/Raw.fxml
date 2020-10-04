@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.RawController">
+   <top>
+      <AnchorPane prefHeight="52.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="10.0" layoutY="7.0" prefHeight="34.0" prefWidth="296.0" spacing="20.0" AnchorPane.bottomAnchor="9.0" AnchorPane.topAnchor="9.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleIn" prefHeight="23.0" prefWidth="71.0" text="入库">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleOut" prefHeight="23.0" prefWidth="72.0" text="出库">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleDetail" text="日志记录详细说明">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="499.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="row" layoutX="212.0" layoutY="21.0" prefHeight="308.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="rowno" prefWidth="134.0" text="原材料编号" />
+                      <TableColumn fx:id="rowname" prefWidth="174.0" text="原材料名称" />
+                      <TableColumn fx:id="rowsize" prefWidth="183.0" text="规格" />
+                        <TableColumn fx:id="rowamount" prefWidth="210.0" text="数量" />
+                        <TableColumn fx:id="rowunit" prefWidth="117.0" text="单位" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="rowlog" layoutX="124.0" layoutY="34.0" prefHeight="307.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="rowlogno" prefWidth="75.0" text="日志编号" />
+                        <TableColumn fx:id="rowlogname" prefWidth="117.0" text="原材料名称" />
+                      <TableColumn fx:id="rowlogwhere" prefWidth="123.0" text="入库或去向" />
+                        <TableColumn fx:id="rowlogsize" prefWidth="92.0" text="规格" />
+                        <TableColumn fx:id="rowlogamount" prefWidth="129.0" text="数量" />
+                        <TableColumn fx:id="rowlogunit" prefWidth="63.0" text="单位" />
+                        <TableColumn fx:id="rowlogtime" prefWidth="111.0" text="时间" />
+                        <TableColumn fx:id="rowlogexplain" prefWidth="106.0" text="说明" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
