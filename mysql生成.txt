@@ -1,0 +1,155 @@
+create database `数据库课程设计` default character set = `utf8mb4`;
+
+use `数据库课程设计`;
+
+
+drop table if exists `user`;
+create table `user`(
+`account` VARCHAR(255),
+`password` VARCHAR(255)
+);
+insert into `user` values ('slh', 'qweasdzxc');
+
+drop table if exists `人员表`;
+create table `人员表`(
+`人员编号` char(5) primary key,
+`姓名` varchar(10),
+`性别` char(2) check (性别 = "男" or 性别 = "女"),
+`电话` char(11),
+`职位` varchar(20)
+);
+
+
+
+drop table if exists `机器表`;
+create table `机器表`(
+`机器编号` char(2) primary key,
+`预期日产量` int
+);
+
+drop table if exists `生产岗位`;
+create table `生产岗位`(
+`生产编号` char(5) primary key,
+`机器编号` char(2) references 机器表(机器编号),
+`人员编号` char(5) references 人员表(人员编号),
+`时段` smallint check (时段 = 1 or 时段 = 2 or 时段 = 3)
+);
+
+
+drop table if exists `采购订单`;
+create table `采购订单`(
+`采购订单编号` int auto_increment primary key,
+`厂家` varchar(20),
+`原材料名称` varchar(10),
+`规格` varchar(10),
+`数量` float,
+`单位` char(2),
+`单价` float,
+`总价` float,
+`时间` datetime
+);
+alter table 采购订单 auto_increment = 1;
+
+drop table if exists `原材料总仓库`;
+create table `原材料总仓库`(
+`原材料编号` int auto_increment primary key,
+`原材料名称` varchar(10),
+`规格` varchar(10),
+`数量` float,
+`单位` char(2)
+);
+alter table 原材料总仓库 auto_increment = 1;
+INSERT INTO `原材料总仓库` (原材料名称, 规格, 数量, 单位) VALUES ('无纺布', '195/25', 0, '千克');
+INSERT INTO `原材料总仓库` (原材料名称, 规格, 数量, 单位) VALUES ('无纺布', '175/25', 0, '千克');
+INSERT INTO `原材料总仓库` (原材料名称, 规格, 数量, 单位) VALUES ('无纺布（蓝色）', '175/25', 0, '千克');
+INSERT INTO `原材料总仓库` (原材料名称, 规格, 数量, 单位) VALUES ('熔喷布', '175/99', 0, '千克');
+INSERT INTO `原材料总仓库` (原材料名称, 规格, 数量, 单位) VALUES ('熔喷布', '175/95', 0, '千克');
+INSERT INTO `原材料总仓库` (原材料名称, 规格, 数量, 单位) VALUES ('耳带绳', '0.03', 0, '千克');
+INSERT INTO `原材料总仓库` (原材料名称, 规格, 数量, 单位) VALUES ('鼻梁条', NULL, 0, '米');
+
+drop table if exists `原材料进出库日志记录`;
+create table `原材料进出库日志记录`(
+`原材料日志编号` int auto_increment primary key,
+`原材料编号` int references 原材料总仓库(原材料编号),
+`进库或去向` char(10),
+`规格` varchar(10),
+`数量` float,
+`单位` char(2),
+`日期` datetime,
+`说明` varchar(100)
+);
+alter table 原材料进出库日志记录 auto_increment = 1;
+
+drop table if exists `人员出勤记录`;
+create table `人员出勤记录`(
+`出勤编号` char(10) primary key,
+`人员编号` char(5) references 人员表(人员编号),
+`是否缺勤` char(2) default '否',
+`日期` date,
+`说明` varchar(100),
+check (是否缺勤 = '是' or 是否缺勤 = '否')
+);
+
+drop table if exists `成品仓库`;
+create table `成品仓库`(
+`产品编号` int auto_increment primary key,
+`产品名称` varchar(10),
+`数量` int,
+`单位` char(2)
+);
+alter table 成品仓库 auto_increment = 1;
+INSERT INTO `成品仓库` (产品名称, 数量, 单位) VALUES('防护口罩', 0, '片');
+INSERT INTO `成品仓库` (产品名称, 数量, 单位) VALUES('一次性医用口罩', 0, '片');
+INSERT INTO `成品仓库` (产品名称, 数量, 单位) VALUES('医用外科口罩', 0, '片');
+INSERT INTO `成品仓库` (产品名称, 数量, 单位) VALUES('KN95', 0, '片');
+
+drop table if exists `成品仓库进出库日志记录`;
+create table `成品仓库进出库日志记录`(
+`产品日志编号` int auto_increment primary key,
+`产品编号` int references 成品仓库(产品编号),
+`来源或出库` char(10),
+`数量` int,
+`单位` char(2),
+`时间` datetime,
+`说明` varchar(100)
+);
+alter table 成品仓库进出库日志记录 auto_increment = 1;
+
+drop table if exists `订单记录`;
+create table `订单记录`(
+`订单编号` char(5) primary key,
+`联系人` varchar(10),
+`客户单位` varchar(20),
+`联系电话` char(11),
+`地址` varchar(30),
+`接单时间` datetime,
+`是否完成` char(2) default '否',
+`说明` varchar(100),
+check(是否完成 = '是' or 是否完成 = '否') 
+);
+
+drop table if exists `订单细节`;
+create table `订单细节`(
+`订单细节编号` char(6) primary key,
+`订单编号` char(5) references 订单记录(订单编号),
+`产品编号` char(2) references 成品仓库(产品编号),
+`数量` int
+);
+
+drop table if exists `未完成订单`;
+create table `未完成订单`(
+`订单细节编号` char(6) primary key,
+`产品编号` char(2) references 成品仓库(产品编号),
+`还需发货的数量` int,
+foreign key(订单细节编号) references 订单细节(订单细节编号)
+);
+
+drop table if exists `分批次发货记录`;
+create table `分批次发货记录`(
+`订单细节编号` char(6) primary key,
+`产品编号` char(2) references 成品仓库(产品编号),
+`数量` int,
+`发货时间` datetime,
+`说明` varchar(100),
+foreign key(订单细节编号) references 订单细节(订单细节编号)
+);
